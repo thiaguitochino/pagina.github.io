@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Thiaguitochino. Proyectos de programación, desarrollo web, electrónica e inteligencia artificial.">
+<title>Thiaguitochino | Portfolio</title>
+
+<style>
+:root {
+    --bg: #090b10;
+    --surface: #121722;
+    --border: #252e3d;
+    --green: #a5f36b;
+    --text: #f4f6fa;
+    --muted: #a0a9b9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    min-height: 75px;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #0e121b;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--green);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.hero {
+    min-height: 520px;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+h1 span {
+    color: var(--green);
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 570px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 22px;
+    background: var(--green);
+    color: #10150b;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: #c3ff99;
+}
+
+.profile {
+    padding: 30px;
+    min-width: 250px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.profile h2 {
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.profile p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.search {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.search:focus {
+    border-color: var(--green);
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 245px;
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green);
+}
+
+.icon {
+    font-size: 29px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: var(--green);
+    font-size: 20px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card a {
+    margin-top: auto;
+    color: var(--green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.about {
+    background: #10151f;
+    border-top: 1px solid var(--border);
+}
+
+.about p {
+    max-width: 750px;
+    color: var(--muted);
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+}
+
+footer a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 18px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+
+    .profile {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">thiaguito.</div>
+
+    <nav>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="https://github.com/thiaguitochino" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">PORTFOLIO 2026</div>
+
+        <h1>Hola, soy<br><span>Thiaguitochino.</span></h1>
+
+        <p class="hero-description">
+            Bienvenido a mi portfolio personal.
+            Acá encontrarás mis proyectos, trabajos y prácticas
+            relacionados con la programación, el desarrollo web,
+            la electrónica y la tecnología.
+        </p>
+
+        <a href="#proyectos" class="button">
+            Explorar proyectos ↓
+        </a>
+    </div>
+
+    <div class="profile">
+        <h2>Thiaguitochino</h2>
+        <p>Estudiante · Desarrollador en formación</p>
+        <br>
+        <p>11 repositorios públicos</p>
+        <p>Programación · Web · Tecnología</p>
+        <br>
+        <a href="https://github.com/thiaguitochino"
+           target="_blank" rel="noopener" class="button">
+            Mi GitHub ↗
+        </a>
+    </div>
+</section>
+
+<section id="proyectos">
+    <div class="section-heading">
+        <h2>Mis proyectos.</h2>
+        <p>Una colección de mis trabajos y experiencias.</p>
+    </div>
+
+    <input
+        type="search"
+        id="search"
+        class="search"
+        placeholder="Buscar un proyecto..."
+        aria-label="Buscar proyectos"
+    >
+
+    <div class="projects" id="projectList">
+
+        <article class="card">
+            <div class="icon">🌱</div>
+            <h3>Huerta</h3>
+            <p>Proyecto relacionado con una huerta y sus actividades.</p>
+            <a href="https://github.com/thiaguitochino/huerta" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">🎨</div>
+            <h3>Boostrap</h3>
+            <p>Prácticas de diseño y desarrollo web con Bootstrap.</p>
+            <a href="https://github.com/thiaguitochino/boostrap" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">🤖</div>
+            <h3>Promptia</h3>
+            <p>Creación de prompts utilizando roles, contexto, objetivos, formatos y restricciones.</p>
+            <a href="https://github.com/thiaguitochino/promptia" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">🌐</div>
+            <h3>HTML</h3>
+            <p>Material y prácticas sobre HTML y desarrollo de páginas web.</p>
+            <a href="https://github.com/thiaguitochino/HTML" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">⚡</div>
+            <h3>ESP32</h3>
+            <p>Proyectos y prácticas relacionados con electrónica y microcontroladores.</p>
+            <a href="https://github.com/thiaguitochino/esp32" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">📋</div>
+            <h3>Encuesta</h3>
+            <p>Trabajo relacionado con encuestas y formularios.</p>
+            <a href="https://github.com/thiaguitochino/encuesta" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">🔄</div>
+            <h3>Recursividad</h3>
+            <p>Ejercicios de Python sobre factoriales, sumas y funciones recursivas.</p>
+            <a href="https://github.com/thiaguitochino/recursividad" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">💻</div>
+            <h3>Index</h3>
+            <p>Repositorio con archivos y prácticas de desarrollo.</p>
+            <a href="https://github.com/thiaguitochino/index" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">📝</div>
+            <h3>Examen</h3>
+            <p>Repositorio correspondiente a un trabajo o evaluación.</p>
+            <a href="https://github.com/thiaguitochino/examen" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">🚀</div>
+            <h3>Portfolio web</h3>
+            <p>Mi sitio personal creado y publicado con GitHub Pages.</p>
+            <a href="https://github.com/thiaguitochino/thiaguitochino.github.io" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+        <article class="card">
+            <div class="icon">🧠</div>
+            <h3>IA 2026</h3>
+            <p>Actividades sobre inteligencia artificial, machine learning y análisis de datos.</p>
+            <a href="https://github.com/thiaguitochino/ia2026" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </article>
+
+    </div>
+</section>
+
+<section class="about" id="sobre-mi">
+    <div class="section-heading">
+        <h2>Sobre mí.</h2>
+        <p>Aprender, crear y mejorar.</p>
+    </div>
+
+    <p>
+        Me gusta experimentar con nuevas ideas y transformarlas
+        en proyectos. Este espacio reúne mis trabajos de programación,
+        desarrollo web, electrónica y tecnología.
+        Mi objetivo es continuar aprendiendo y desarrollando
+        nuevas habilidades.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Thiaguitochino · Portfolio personal</p>
+    <p>
+        <a href="https://github.com/thiaguitochino" target="_blank" rel="noopener">
+            github.com/thiaguitochino
+        </a>
+    </p>
+</footer>
+
+<script>
+(function () {
+    const search = document.getElementById("search");
+    const cards = document.querySelectorAll(".card");
+
+    if (!search || !cards.length) {
+        return;
+    }
+
+    search.addEventListener("input", function () {
+        const value = search.value.toLowerCase().trim();
+
+        cards.forEach(function (card) {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(value) ? "flex" : "none";
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
